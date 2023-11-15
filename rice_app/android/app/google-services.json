@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486169093218",
+    "project_id": "riceapp-aafca",
+    "storage_bucket": "riceapp-aafca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486169093218:android:25571086982d3d6add9d3b",
+        "android_client_info": {
+          "package_name": "com.example.rice_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_zOPFa26H2FyOGsNaBAqqJZ4ZSHu1Wd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

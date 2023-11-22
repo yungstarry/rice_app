@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
 
 import 'package:rice_app/constant/routes.dart';
+import 'package:rice_app/utilities/show_error_dialog.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -69,11 +70,23 @@ class _LoginViewState extends State<LoginView> {
                 );
               } on FirebaseAuthException catch (e) {
                 if (e.code == 'user-not-found') {
-                  devtools.log("User not found");
+                  // ignore: use_build_context_synchronously
+                  await showErrorDialog(
+                    context,
+                    'User not found',
+                  );
                 } else {
+                  // ignore: use_build_context_synchronously
+                  await showErrorDialog(
+                    context,
+                    'Error: ${e.code}',
+                  );
                   devtools.log("SOMETHING WENT WRONG");
                   devtools.log(e.code);
                 }
+              } catch (e) {
+                // ignore: use_build_context_synchronously
+                await showErrorDialog(context, e.toString());
               }
             },
             child: const Text("Login"),
@@ -89,3 +102,5 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 }
+
+
